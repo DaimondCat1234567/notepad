@@ -1,7 +1,29 @@
-<head><title>Блокнот в браузере</title></head>
-<p>Блокнот</p>
-<form action="index.html" method="POST">
-  <input type="textarea" name="a" value="Напиши что-либо" rows="10" cols="20"><br><br><br>
-  <input type="checkbox" name="b" value="Подтвердить удаление текста" required><br>
-  <input type="submit" value="очистить">
-</form>
+<html>
+  <head>
+    <title>Блокнот в браузере!</title>
+  </head>
+  <body>
+    <h1>Блокнот</h1>
+    <textarea id="input" placeholder="Текст" rows="6" cols="30"></textarea>
+    <input type="text" id="input1" placeholder="Номер записи">
+    <button onclick="save()">Сохранить</button><button onclick="newB()">Новая запись</button>
+    <div id="blok">
+      <p id="b1">Строка первая</p>
+    </div>
+    <script>
+      doc = {}
+      doc.input = document.getElementById('input')
+      doc.num = document.getElementById('input1')
+      doc['блокнот'] = document.getElementById('blok')
+      doc.input.value = ''
+      doc.num.value = ''
+      function save() {
+        document.getElementById(`b${doc.num}`).textContent = doc.input
+      }
+      function newB() {
+        i = `${doc['блокнот'].innerHTML}<p id="b${doc.num}">${doc.input}</p>`
+        doc['блокнот'].innerHTML = i
+      }
+    </script>
+  </body>
+</html>
