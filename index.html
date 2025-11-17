@@ -18,11 +18,13 @@
       doc.input.value = ''
       doc.num.value = ''
       function save() {
-        document.getElementById(`b${doc.num}`).textContent = doc.input
+        document.getElementById(`b${doc.num.value}`).textContent = doc.input.value
       }
       function newB() {
-        i = `${doc['блокнот'].innerHTML}<p id="b${doc.num}">${doc.input}</p>`
-        doc['блокнот'].innerHTML = i
+        const p = document.createElement('p');
+        p.id = `b${doc.num.value}`;
+        p.textContent = doc.input.value;
+        doc['блокнот'].appendChild(p);
       }
     </script>
   </body>
