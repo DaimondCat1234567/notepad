@@ -4,7 +4,7 @@ doc.input = document.getElementById('input')
 doc.num = document.getElementById('input1')
 doc.input.value = ''
 doc.num.value = ''
-function save() {
+function update() {
   document.getElementById(`b${doc.num.value}`).textContent = doc.input.value
 }
 function newB() {
@@ -14,3 +14,5 @@ function newB() {
     </p>
   `
 }
+function save() {}
+function load() {}
