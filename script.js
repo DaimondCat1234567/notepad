@@ -1,5 +1,5 @@
 let b = document.getElementHyId('blok');
-doc = {}
+let doc = {}
 doc.input = document.getElementById('input')
 doc.num = document.getElementById('input1')
 doc.input.value = ''
@@ -14,5 +14,12 @@ function newB() {
     </p>
   `
 }
-function save() {}
-function load() {}
+function save() {
+  localStorsge.setItem('notepad-data', toString({
+    b
+  }))
+}
+function load() {
+  let locData = JSON.parse(localStorage.getItem('notepad-data'))
+  b = locData.b
+}
