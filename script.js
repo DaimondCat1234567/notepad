@@ -10,7 +10,7 @@ function update() {
 function newB() {
   b.innerHTML += `
     <p id="b${doc.num.value}">
-      doc.input.value
+      ${doc.input.value}
     </p>
   `
 }
