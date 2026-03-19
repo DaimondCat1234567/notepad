@@ -1,4 +1,4 @@
-let b = document.getElementHyId('blok');
+let b = document.getElementById('blok');
 let doc = {}
 doc.input = document.getElementById('input')
 doc.num = document.getElementById('input1')
@@ -15,7 +15,7 @@ function newB() {
   `
 }
 function save() {
-  localStorsge.setItem('notepad-data', toString({
+  localStorage.setItem('notepad-data', JSON.stringify({
     b
   }))
 }
