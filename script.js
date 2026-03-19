@@ -16,10 +16,10 @@ function newB() {
 }
 function save() {
   localStorage.setItem('notepad-data', JSON.stringify({
-    b
+    b: b.innerHTML
   }))
 }
 function load() {
   let locData = JSON.parse(localStorage.getItem('notepad-data'))
-  b = locData.b
+  b.innerHTML = locData.b
 }
